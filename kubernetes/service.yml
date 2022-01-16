@@ -1,0 +1,31 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: "2022-01-16T20:59:03Z"
+  labels:
+    app: webpack-reactjs-web
+  name: webpack-reactjs-web
+  namespace: default
+  resourceVersion: "1972"
+  uid: 28331a4d-5acf-4ef9-8226-9d473b6038bf
+spec:
+  allocateLoadBalancerNodePorts: true
+  clusterIP: 10.108.66.62
+  clusterIPs:
+  - 10.108.66.62
+  externalTrafficPolicy: Cluster
+  internalTrafficPolicy: Cluster
+  ipFamilies:
+  - IPv4
+  ipFamilyPolicy: SingleStack
+  ports:
+  - nodePort: 30857
+    port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: webpack-reactjs-web
+  sessionAffinity: None
+  type: LoadBalancer
+status:
+  loadBalancer: {}
